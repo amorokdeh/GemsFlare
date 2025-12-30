@@ -12,6 +12,19 @@ This project is developed as a tutorial-style application to demonstrate real-wo
 - **Database Integration**: Persistent data storage using PostgreSQL.
 - **Cloud Deployment**: Managed using Google Cloud Console.
 
+## Screenshots 📸
+### Home Page
+![Home Page](screenshots/home.png)
+
+### Profile Page
+![Login Page](screenshots/profile.png)
+
+### Products Page
+![Products Page](screenshots/products.png)
+
+### Cart / Checkout
+![Cart Page](screenshots/cart.png)
+
 ## Technologies ⚙️
 ### Backend
 - Spring Boot  
