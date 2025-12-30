@@ -31,6 +31,9 @@ This project is developed as a tutorial-style application to demonstrate real-wo
 ## Project Goal 🎯
 The goal of Gems Flares is to showcase a complete full-stack web application, covering authentication, backend services, frontend development, database management, and cloud deployment within a single project.
 
+## Demo 📺
+Watch the project in action: [YouTube Link]: https://youtu.be/Y35bKmnf5Go
+
 ## Screenshots 📸
 ### Home Page
 ![Home Page](screenshots/home.png)
