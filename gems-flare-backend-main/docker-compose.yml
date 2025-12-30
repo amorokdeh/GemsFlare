@@ -1,0 +1,24 @@
+version: "3.9"
+
+name: Gemsflare
+
+services:
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gemsflare-backend
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      SPRING_DATASOURCE_URL: jdbc:postgresql://ep-green-pine-a51o7mwy-pooler.us-east-2.aws.neon.tech/neondb
+      SPRING_DATASOURCE_USERNAME: neondb_owner
+      SPRING_DATASOURCE_PASSWORD: npg_9t6oJhpHjKQl
+    ports:
+      - "8080:8080"
+    networks:
+      - gemsflare-network
+
+networks:
+  gemsflare-network:
+    driver: bridge

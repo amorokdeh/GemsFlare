@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            font-size: 12px;
+            color: #333;
+        }
+        h1 { font-size: 20px; margin-bottom: 10px; }
+        h2 { font-size: 16px; margin-top: 30px; margin-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 8px; font-size: 12px; }
+        th { background-color: #f7f7f7; }
+        .totals { margin-top: 20px; width: 250px; float: right; font-size: 12px; }
+        .totals td { border: none; padding: 5px 8px; }
+
+        /* Logo positioning and styling */
+        .logo {
+            width: 240px; /* Set logo width explicitly */
+            height: auto;
+            float: left;
+            margin-right: 15px;
+        }
+
+        /* Invoice header section on the right */
+        .invoice-header {
+            float: right;
+            width: 60%;
+            text-align: right;
+        }
+
+        /* Clear the floating elements */
+        .clearfix {
+            clear: both;
+        }
+
+        /* Flexbox container to align Invoice Number, Issue Date, and Order Number on the same line */
+        .invoice-details {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <!-- Logo on the left side -->
+    <div class="logo">
+        <img src="https://storage.googleapis.com/gemsflare-src/logo/Gems%20Flare%20Logo.png"
+             alt="GemsFlare Logo" style="width: 60px; height: auto;"/>
+    </div>
+
+    <!-- Invoice header on the right side -->
+    <div class="invoice-header">
+        <h1>Invoice</h1>
+        <!-- Using flexbox for invoice details to align them horizontally -->
+        <div class="invoice-details">
+            <p><strong>Invoice Number:</strong> <span th:text="${invoice.number}"></span></p>
+            <p><strong>Issue Date:</strong> <span th:text="${invoice.issuedate}"></span></p>
+            <p><strong>Order Number:</strong> <span th:text="${invoice.ordernumber}"></span></p>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+</div>
+
+<!-- Billing Address Section -->
+<h2>Billing Address</h2>
+<p th:text="${invoice.billaddress.name + ' ' + invoice.billaddress.lastname}"></p>
+<p th:text="${invoice.billaddress.street + ' ' + invoice.billaddress.housenumber}"></p>
+<p th:text="${invoice.billaddress.zipcode + ' ' + invoice.billaddress.county}"></p>
+<p th:text="${invoice.billaddress.country}"></p>
+
+<!-- Shipping Address Section -->
+<h2>Shipping Address</h2>
+<p th:text="${invoice.shippingaddress.name + ' ' + invoice.shippingaddress.lastname}"></p>
+<p th:text="${invoice.shippingaddress.street + ' ' + invoice.shippingaddress.housenumber}"></p>
+<p th:text="${invoice.shippingaddress.zipcode + ' ' + invoice.shippingaddress.county}"></p>
+<p th:text="${invoice.shippingaddress.country}"></p>
+
+<!-- Items Section -->
+<h2>Items</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${invoice.items}">
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.amount}"></td>
+        <td th:text="${item.price}"></td>
+        <td th:text="${item.amount * item.price}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- Totals Section -->
+<table class="totals">
+    <tr>
+        <td><strong>Subtotal:</strong></td>
+        <td th:text="${invoice.totalamountwithouttax}"></td>
+    </tr>
+    <tr>
+        <td><strong>Tax:</strong></td>
+        <td th:text="${invoice.tax}"></td>
+    </tr>
+    <tr>
+        <td><strong>Total:</strong></td>
+        <td th:text="${invoice.totalamount}"></td>
+    </tr>
+    <tr>
+        <td><strong>Payment Method:</strong></td>
+        <td th:text="${invoice.payment}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

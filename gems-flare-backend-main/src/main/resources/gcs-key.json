@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "gems-flare",
+  "private_key_id": "6b4a3a0fc71d275b1fb7554f3977a0e0cde54396",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDtNJuy606ush3i\nOS0nJJwEVKwmenIbQAtglf5KnAe/q/irPp2Irhg62UoKGsP9pjhhdBBSbLyPVw7N\ne59Hg8y5ln3WwThJSVgrDh33nibd+LL07dLXxbJT/36PP9TpSSRQvXNNXbrvTYWt\n+3RozoQHdbSiDZuo67m6XCuYrx8CpLcR6n9RRHGDawry/HyLKKrlNBCBvzqiXvll\n4jr5/uY8SaQx83g6Q92n+AFa1jjzIhhOsdvEPrCL0ZyMERhstaVWCJ2DwXcHkNMY\nFZiWtMESWJ8Tg/dMpn+1fvGctECMpAMf6qSsWbR0d2fA6dHtcjfzh7wRcHBuVdUG\n+eGhUQxRAgMBAAECggEAakzkp5pG8Qf2V26LGxsPZetyGG5QG4EoeBjP1Cy3VkCh\nmFBftaRbTGgbA4s6IL4wTw/9zopXOB9qDVDksN5STSsxap+9cy5Quj7B1DmGLnxo\n6lV34uWARJ9fXp/a8M6r3RkBhn7GKr7BdRYWdW9zAIrRr7vMcbdtzKPIj8yO55X/\na8FI3krOuYxjTnjWzcJk4nTzsR81EE+4ApW6laa5nOXtCsFTXw8QDYegStO5M/Z0\nFa50ZpH5HG0jpeQif2uVvr7mDC6PftkNoPCKsBhgGYgCg5U02FWj7Bw24Amcs6uW\nLxEM2UKo8HLKfN5CTKKrqiq1cypHHqrMODt6q9EkdwKBgQD4A2rq31RD9sbCoQqU\nF1fvG0ZNviMbGeLGItTuOpywjA132QawiuT33XGu9FRM1iUe2+mkRNasHmoRuBLc\nvzGcHDZHnFZdR1WpKBysumSLclRDosN5bNthrKho3iejQrscG+S5TgfWPGGyPZOT\nhR52vWtZ4g6JhOFCE6ADhmmf9wKBgQD02BeltR1rwHOnfiHSAscZvJ67KsDdtulI\n5eaVeHnyZm6QYYic6x1FGeVURl6aSiJR6Cd1Cl3D3E6XMTWi5f5n6R0zAbTamtY3\nytjg1l0d8FANFRmfh0Fk28SeEkw6Suw4ZoxfX7x00oAafzh1PELTGnwliV6u4NOk\nTPJMdmKz9wKBgQCT3W3ERIw3zQxpg5wL+PLrUqaSuTay9Lb4jFHJCtbah1WMS68q\nWFT01mjt9yu/d7k/8bsVvhkDG0r/73AHflI0kblm7nWrPVl79bdK4AIMBYjpnkPO\nxDDzxf3OMA0P0DxAIP034abYer2AiCfRPv+PqZU0TIuAP+IRBCRVlbCptwKBgQDx\nD0BY+bR5vgUgRuLtbaaxBDATfshcghW0nAUl7HPD4G3C4QQr2p/6xMAw9Qd3SL35\nfmQ6q3Ydu+30lZKFS4Pqsmz5Jxj0kbWPQLu+wc70BwIJn1iW5AfSUT2Hk+RRECr6\nbJyP2iYlropJjC/93NK+HTlVi6YY72nwPYHhHj2XiQKBgEmmcjWUtnwRFmLngZWP\nLjuDaqNe5ZwKivvWWPkJxurMvTJumH1sTccb1W68GyTZOclMuVAdiqs0JyyVuJI7\nWMPbuvtFRX1mz2wWWjij92tdpdzt7nNUtaj11C3pnQpDlhvo0zCnPAT0OmY6ExBH\nJLSYTnqvQ3uXhABG7eQFtSvJ\n-----END PRIVATE KEY-----\n",
+  "client_email": "image-uploader@gems-flare.iam.gserviceaccount.com",
+  "client_id": "104884743893233382612",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/image-uploader%40gems-flare.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

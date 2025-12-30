@@ -1,0 +1,20 @@
+version: "3.9"
+
+name: Gemsflare
+
+services:
+  frontend:
+    build:
+      context: ../gems-flare-frontend
+      dockerfile: Dockerfile
+    container_name: gemsflare-frontend
+    ports:
+      - "8081:8080"
+    environment:
+      REACT_APP_API_URL: http://localhost:8080
+    networks:
+      - gemsflare-network
+
+networks:
+  gemsflare-network:
+    external: true

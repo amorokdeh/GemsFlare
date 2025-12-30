@@ -1,0 +1,47 @@
+stages:
+  - build
+  - deploy
+
+# Define environment variables
+variables:
+  GOOGLE_PROJECT_ID: "gems-flare"
+  IMAGE_NAME: "gems-flare-frontend"
+  REGION: "europe-west1"
+  SERVICE_NAME: "gems-flare-frontend"
+  DOCKER_IMAGE: "gcr.io/$GOOGLE_PROJECT_ID/$IMAGE_NAME"
+
+# Build Stage
+build:
+  stage: build
+  image: node:21
+  script:
+    - echo "Installing dependencies and building the frontend project..."
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 day
+
+deploy:
+  stage: deploy
+  image: google/cloud-sdk:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ""
+  script:
+    - echo "Authenticating with Google Cloud..."
+    - echo $GOOGLE_APPLICATION_CREDENTIALS | base64 --decode > /tmp/key.json
+    - gcloud auth activate-service-account --key-file=/tmp/key.json
+    - gcloud config set project $GOOGLE_PROJECT_ID
+    - gcloud auth configure-docker
+    - echo "Building Docker image..."
+    - docker build -t $DOCKER_IMAGE .
+    - echo "Pushing Docker image to Google Container Registry..."
+    - docker push $DOCKER_IMAGE
+    - echo "Deploying to Google Cloud Run..."
+    - gcloud run deploy $SERVICE_NAME --image $DOCKER_IMAGE --platform managed --region $REGION --allow-unauthenticated
+  only:
+    - main  # Only deploy when changes are pushed to the main branch
